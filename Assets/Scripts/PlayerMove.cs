@@ -14,11 +14,13 @@ public class PlayerMove : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
+    float sprintTime = 0f;
+    bool canSprint = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -45,5 +47,38 @@ public class PlayerMove : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+
+        Debug.Log(canSprint);
+        if (sprintTime >= 100f)
+        {
+            canSprint = false;
+        }
+
+        if (sprintTime == 0)
+        {
+            canSprint = true;
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            if (canSprint)
+            {
+                speed = 25f;
+                sprintTime += 0.5f;
+            }
+            else
+            {
+                speed = 12f;
+            }
+        }
+        else
+        {
+            speed = 12f;
+            if (sprintTime > 0)
+            {
+                sprintTime -= 0.5f;
+            }
+        }
     }
 }
