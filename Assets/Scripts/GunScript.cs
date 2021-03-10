@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿//credit to brackeys on youtube:
+//https://www.youtube.com/watch?v=THnivyG0Mvo&list=PLPV2KyIb3jR7dFbE2UQYu7QWMdUgDnlnk&index=2
+
+using UnityEngine;
 
 public class GunScript : MonoBehaviour
 {
