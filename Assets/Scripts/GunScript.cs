@@ -3,6 +3,7 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GunScript : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class GunScript : MonoBehaviour
     public Camera cam;
 
     public Animator animator;
+    public Text ammoCount;
 
     private void Start()
     {
@@ -32,6 +34,7 @@ public class GunScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ammoCount.text = currentAmmo.ToString();
         if (isReloading)
             return;
 
