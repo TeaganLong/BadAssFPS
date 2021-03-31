@@ -16,11 +16,12 @@ public class PlayerMove : MonoBehaviour
     bool isGrounded;
     float sprintTime = 0f;
     bool canSprint = true;
+    AudioSource walkSound;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        walkSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,6 +32,18 @@ public class PlayerMove : MonoBehaviour
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = 0f;
+        }
+
+        if (Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical"))
+        {
+            if (!walkSound.isPlaying && isGrounded)
+            {
+                walkSound.Play();
+            }
+        }
+        else if (!Input.GetButton("Horizontal") && !Input.GetButton("Vertical") && walkSound.isPlaying)
+        {
+            walkSound.Stop();
         }
 
         float x = Input.GetAxis("Horizontal");
