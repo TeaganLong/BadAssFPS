@@ -44,6 +44,12 @@ public class GunScript : MonoBehaviour
             return;
         }
 
+        if (Input.GetKeyDown(KeyCode.R) && isReloading == false)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
+
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
