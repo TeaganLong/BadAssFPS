@@ -12,6 +12,8 @@ public class GunScript : MonoBehaviour
     public float range = 100f;
     public float fireRate = 15f;
 
+    public ParticleSystem muzzleFlash;
+
     public int maxAmmo = 10;
     private int currentAmmo;
     public float reloadTime = 1f;
@@ -77,6 +79,8 @@ public class GunScript : MonoBehaviour
 
     void Shoot()
     {
+        muzzleFlash.Stop();
+        muzzleFlash.Play();
         currentAmmo--;
 
         RaycastHit hit;
