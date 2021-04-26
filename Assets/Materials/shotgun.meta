@@ -1,6 +1,10 @@
 fileFormatVersion: 2
-guid: 868988baf078a1b4690c698c9d6a3637
+<<<<<<< HEAD:Assets/Materials/shotgun.meta
+guid: 21ed319df10522e4b9419c74f9e44025
 folderAsset: yes
+=======
+guid: ec375e584edea6a41bc17694bc2bed0e
+>>>>>>> main:Assets/Scenes/SpawnerScriptTesting.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
