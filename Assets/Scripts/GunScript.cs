@@ -7,8 +7,12 @@ using UnityEngine.UI;
 
 public class GunScript : MonoBehaviour
 {
+    public bool isAutomatic = false;
     public float damage = 10f;
     public float range = 100f;
+    public float fireRate = 15f;
+
+    public ParticleSystem muzzleFlash;
 
     public int maxAmmo = 10;
     private int currentAmmo;
@@ -19,6 +23,8 @@ public class GunScript : MonoBehaviour
 
     public Animator animator;
     public Text ammoCount;
+
+    private float nextTimeToFire = 0f;
 
     private void Start()
     {
@@ -44,8 +50,15 @@ public class GunScript : MonoBehaviour
             return;
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(KeyCode.R) && isReloading == false && currentAmmo < maxAmmo)
         {
+            StartCoroutine(Reload());
+            return;
+        }
+
+        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+        {
+            nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
         }
     }
@@ -66,6 +79,8 @@ public class GunScript : MonoBehaviour
 
     void Shoot()
     {
+        muzzleFlash.Stop();
+        muzzleFlash.Play();
         currentAmmo--;
 
         RaycastHit hit;
