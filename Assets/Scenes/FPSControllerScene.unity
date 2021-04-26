@@ -136,8 +136,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29eaa9a17601c649958246c4705cd2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAutomatic: 0
   damage: 50
   range: 5
+  fireRate: 15
   maxAmmo: 99999
   reloadTime: -1
   cam: {fileID: 1214886746}
@@ -167,8 +169,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29eaa9a17601c649958246c4705cd2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAutomatic: 0
   damage: 10
   range: 100
+  fireRate: 15
   maxAmmo: 10
   reloadTime: 1.2
   cam: {fileID: 1214886746}
@@ -355,8 +359,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29eaa9a17601c649958246c4705cd2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAutomatic: 0
   damage: 25
   range: 50
+  fireRate: 15
   maxAmmo: 2
   reloadTime: 1.5
   cam: {fileID: 1214886746}
@@ -4558,8 +4564,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.7385142, z: 1}
+  m_Center: {x: 0, y: 1.0512954, z: 0}
 --- !u!1 &2039649822
 GameObject:
   m_ObjectHideFlags: 0
